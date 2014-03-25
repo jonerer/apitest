@@ -10,7 +10,7 @@ This package should be paired with its cousin package [apisend](https://github.c
 ###Usage:
 
 ```
-var apisend = require('apisend'), apitest = require('./lib'), request = require('supertest')
+var apisend = require('apisend'), apitest = require('apitest'), request = require('supertest')
 describe('My service', function() {
   var app,
     errors = {
