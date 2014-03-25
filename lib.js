@@ -15,6 +15,7 @@ Test.prototype.api = function fniss(a, b) {
   } else if ('number' === typeof a) {
     code = a
   }
+  this._status = 5
   if (code === 0) {
       this._asserts.push(function(res) {
         return res.body.status === 'ok' ? null : 'Expected response body to have status "ok"'

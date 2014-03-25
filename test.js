@@ -5,7 +5,6 @@ var request = require('supertest')
 var assert = require('assert')
 require('should')
 
-// TODO: describe error modes, and when the asserts should fail
 describe('apisend basic', function() {
   var app,
     closer,
