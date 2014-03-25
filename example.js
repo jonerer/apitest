@@ -1,16 +1,5 @@
-apitest
-=======
-
-A small library to extend supertest's .expect method to fit better with the apisend library.
-
-The main use case is to be able to differentiate between different kinds of errors. For example for authorization, expecting 401 and thinking everything is fine since the tests pass isn't really enough -- a 401 could mean a bunch of different things. 
-
-This package should be paired with its cousin package [apisend](https://github.com/lulzmachine/apisend)
-
-###Usage:
-
-```
 var apisend = require('apisend'), apitest = require('./lib'), request = require('supertest')
+
 describe('My service', function() {
   var app,
     errors = {
@@ -49,4 +38,3 @@ describe('My service', function() {
   })
 
 })
-```

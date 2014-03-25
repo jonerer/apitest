@@ -1,6 +1,6 @@
 {
   "name": "apitest",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "lib.js",
   "scripts": {
@@ -8,10 +8,14 @@
   },
   "author": "",
   "license": "MIT",
+    "repository": {
+    "type": "git",
+    "url": "https://github.com/lulzmachine/apisend"
+  },
   "devDependencies": {
     "apisend": "*",
     "express": "~3.5.0",
-    "should": "~3.2.0-beta1"
+    "should": "*"
   },
   "dependencies": {
     "supertest": "~0.10.0"
