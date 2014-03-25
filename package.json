@@ -7,10 +7,11 @@
     "test": "mocha"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "apisend": "*",
-    "express": "~3.5.0"
+    "express": "~3.5.0",
+    "should": "~3.2.0-beta1"
   },
   "dependencies": {
     "supertest": "~0.10.0"
