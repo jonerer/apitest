@@ -18,9 +18,11 @@ Test.prototype.api = function fniss(a, b) {
   if ('object' === typeof a) {
     this._status = a.http
   }
+  //console.log(this.response)
+  //res.res = res.body.response
   if (code === 0) {
       this._asserts.push(function(res) {
-        return res.body.status === 'ok' ? null : 'Expected response body to have status "ok"'
+        return res.body.status === 'ok' ? null : 'Expected response body to have status "ok". Full body: ' + res.body
       })
   } else {
       this._asserts.push(function(res) {
@@ -44,3 +46,17 @@ Test.prototype.api = function fniss(a, b) {
 
   return this;
 }
+
+/*
+*TODO: maybe this
+var oldend = Test.prototype.end
+Test.prototype.end = function(callback) {
+  var newcallback = function(err, res) {
+    if (!err && res.body && res.body.response) {
+      res.res = res.body.response
+    }
+    return callback(err, res)
+  }
+  return oldend.call(this, newcallback)
+}
+*/

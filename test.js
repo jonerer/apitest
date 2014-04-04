@@ -32,6 +32,9 @@ describe('apisend basic', function() {
     app.get('/code1', function(req, res) {
       res.apisend(1)
     })
+    app.get('/code2', function(req, res) {
+      res.apisend(errors.UNUSED)
+    })
     app.get('/string_conts', function(req, res) {
       res.apisend(0, 'some_result')
     })
@@ -59,6 +62,16 @@ describe('apisend basic', function() {
   it('should accept code 1, but sent in as an object', function(done) {
     request(app).get('/code1').api(errors.UNAUTH, done)
   })
+
+  /*
+  * TODO: maybe this
+  it('should accept code UNUSED, and put the response in res.res, instead of res.body.response', function(done) {
+    request(app).get('/code2').api(errors.UNUSED).end(function(err, res) {
+      res.res.response.code.should.equal(errors.UNUSED.code)
+      done()
+    })
+  })
+*/
 
   it('should not accept code 2 (as an object)', function(done) {
     request(app).get('/code1').api(errors.UNUSED).end(function (err, res) {
