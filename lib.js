@@ -22,7 +22,7 @@ Test.prototype.api = function fniss(a, b) {
   //res.res = res.body.response
   if (code === 0) {
       this._asserts.push(function(res) {
-        return res.body.status === 'ok' ? null : 'Expected response body to have status "ok". Full body: ' + res.body
+        return res.body.status === 'ok' ? null : 'Expected response body to have status "ok". Full body: ' + JSON.stringify(res.body)
       })
   } else {
       this._asserts.push(function(res) {
